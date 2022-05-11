@@ -13,7 +13,7 @@ namespace RazorPagesMovie.Models
             using (var context = new RazorPagesMovieContext(
                 serviceProvider.GetRequiredService<DbContextOptions<RazorPagesMovieContext>>()))
             {
-                if (context.Movie.Any())
+                if (context.Movie == null || context.Movie.Any())
                 {
                     return;
                 }
